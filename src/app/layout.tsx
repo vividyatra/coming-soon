@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Great_Vibes, Inter, Playfair_Display } from "next/font/google";
 import { site } from "@/data/site";
 import { SITE_URL } from "@/lib/seo";
+import { UpcomingTripPopup } from "@/components/shared/UpcomingTripPopup";
 import "./globals.css";
 
 const inter = Inter({
@@ -71,7 +72,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IN" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${playfairItalic.variable} ${greatVibes.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <UpcomingTripPopup />
+      </body>
     </html>
   );
 }
